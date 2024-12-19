@@ -4,12 +4,9 @@ import './calculator.css'
 const Calculator = () => {
     const [result, setResult] = useState('')
 
-
     const handleClick = (e) => {
         setResult(result.concat(e.target.name))
-
     }
-
 
     const clear = () => {
         setResult('')
@@ -18,15 +15,13 @@ const Calculator = () => {
     const backspace = () => {
         setResult(result.slice(0, -1))
     }
-
-
+    
     const calculate = () => {
         try {
             setResult(eval(result).toString())
         } catch (err) {
             setResult('error')
         }
-
     }
 
     return (
@@ -54,8 +49,6 @@ const Calculator = () => {
                 <button name="." onClick={handleClick}>.</button>
                 <button className='equal highlight' onClick={calculate} >=</button>
             </div>
-
-
         </div>
     )
 }
